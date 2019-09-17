@@ -87,3 +87,33 @@
         </div>
     </section>
 @endsection
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $("#referansId").hide();
+
+            $("#musterId").change(function () {
+
+                var musteriId = $(this).val();
+                $.get("{{ url("/referanslar/") }}/" + musteriId, function (data, status) {
+
+                    $('#referansId').html("");
+
+                    var gelenVeri = (JSON.parse(data));
+
+                    for (var i = 0; i < gelenVeri.length; i++) {
+
+                        $('#referansId').append('<option value="' + gelenVeri[i].id + '" selected="selected">' + gelenVeri[i].referansAd + '</option>');
+
+                    }
+                });
+
+            })
+        });
+    </script>
+@endsection
