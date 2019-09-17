@@ -12,9 +12,39 @@
                 </div>
                 <div class="box box-warning">
                     <div class="box-header with-border">
+
+                        <br><br>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Müşteri Seçiniz </label>
+                                <div>
+                                    <select class="form-control select2" style="width:100%"
+                                            name="musteriId" id="musterId">
+                                        <option>Müşteri Seçiniz</option>
+
+
+                                        @foreach($customers as $customer)
+                                            <option value="{{ $customer->id }}">{{ $customer->ad }}</option>
+                                        @endforeach
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Referans </label>
+                                <div>
+                                    <select class="form-control select2 referans" style="width:100%" name="referansId"
+                                            id="referansId">
+                                        <option>Referans Seçiniz</option>
+                                    </select>
+                                </div>
+                            </div>
+                        <label for="">Bütçe Başlığı Giriniz</label>
                         <h3 style="width:100%" class="box-title">
-                            <input type="text" placeholder="Bütçe Başlığı Giriniz" style="width:100%" class="form-control" />
+                            <input type="text" name="butceBaslik" placeholder="Bütçe Başlığı Giriniz" style="width:100%" class="form-control" />
                         </h3>
+                        </div>
                     </div>
                     <div class="box-body">
                         <div class="table-responsive">

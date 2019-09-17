@@ -346,7 +346,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href=""><i class="fa fa-circle-o"></i>Referans Açma</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i>Bütçe Oluştur</a></li>
+                        <li><a href="{{ url('butce-olustur') }}"><i class="fa fa-circle-o"></i>Bütçe Oluştur</a></li>
                         <li><a href="{{ url('/brief') }}"><i class="fa fa-circle-o"></i>Briefler</a></li>
                         <li><a href="{{ url('/brief-create') }}"><i class="fa fa-circle-o"></i>Brief Formu Doldurma</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>Görev Atama</a></li>
